@@ -28,6 +28,7 @@ public class LavaController : MonoBehaviour
         {
             changeSprite();
             gameObject.tag = "transformedPlatform";
+            gameObject.layer = 8;
         }
     }
 }

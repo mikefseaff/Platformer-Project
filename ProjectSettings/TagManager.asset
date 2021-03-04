@@ -7,6 +7,8 @@ TagManager:
   - lava
   - playerAttack
   - transformedPlatform
+  - ice
+  - cloud
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - PlayerAttack
   - Lava
-  - 
+  - cloud
   - 
   - 
   - 

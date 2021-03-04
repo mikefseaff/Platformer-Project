@@ -25,11 +25,15 @@ public class PlayerMovement : MonoBehaviour
     bool attack = false;
     bool canMove = true;
 
+    public float decaySpeed1;
+    public float decaySpeed2;
     Vector3 startingPos;
     public GameObject attackProjectile;
     private void Start()
     {
         startingPos = this.transform.localPosition;
+        decaySpeed1 = 50;
+        decaySpeed2 = -50;
     }
 
     // Update is called once per frame
@@ -52,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 AudioSource.PlayClipAtPoint(jumpClip, transform.position);
                 jump = true;
                 animator.SetBool("IsJumping", true);
+            
             }
             
         }
@@ -82,6 +87,16 @@ public class PlayerMovement : MonoBehaviour
         else if ((Input.GetKey("a") || Input.GetKey("d")))
         {
             animator.SetBool("IsAttacking", false);
+            if (Input.GetKey("a"))
+            {
+                decaySpeed2 = -50;
+            }
+            else if (Input.GetKey("d"))
+            {
+                decaySpeed1 = 50;
+            }
+            
+            
         }
         if (hasJumpPotion && potionTimeCur < potionTimeMax)
         {
@@ -112,11 +127,42 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "lava")
+        if (collision.gameObject.tag == "lava" )
         {
             this.transform.localPosition = startingPos;
+            gameObject.GetComponent<CharacterController2D>().m_Grounded = true;
+            animator.SetBool("IsJumping", false);
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "ice" && GetComponent<CharacterController2D>().m_FacingRight && decaySpeed1 != 0)
+        {
+            decaySpeed1--;
+            Vector3 slide = new Vector3(decaySpeed1, 0, 0);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(slide);
+            gameObject.GetComponent<CharacterController2D>().isOnIce = true;
+        }
+        else if(collision.gameObject.tag == "ice" && !GetComponent<CharacterController2D>().m_FacingRight && decaySpeed2 != 0)
+        {
+            decaySpeed2++;
+            Vector3 slide = new Vector3(decaySpeed2, 0, 0);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(slide);
+            gameObject.GetComponent<CharacterController2D>().isOnIce = true;
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ice")
+        {
+            gameObject.GetComponent<CharacterController2D>().isOnIce = false;
+        }
+    }
+
+
 
     void spawnAttackProjectile()
     {
