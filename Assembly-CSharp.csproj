@@ -67,10 +67,13 @@
     <Compile Include="Assets\Scripts\FloatingMovement.cs" />
     <Compile Include="Assets\Scripts\GemStonePickUp.cs" />
     <Compile Include="Assets\Scripts\LavaController.cs" />
+    <Compile Include="Assets\Scripts\LevelCompleteController.cs" />
     <Compile Include="Assets\Scripts\PlayerAttackController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PotionController.cs" />
+    <Compile Include="Assets\Scripts\TimeController.cs" />
     <Compile Include="Assets\Scripts\cloudController.cs" />
+    <Compile Include="Assets\Scripts\coinCounterController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

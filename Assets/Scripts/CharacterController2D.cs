@@ -19,6 +19,8 @@ public class CharacterController2D : MonoBehaviour
 	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+    public int totalCoins;
+    public bool levelComplete = false;
 	[Header("Events")]
 	[Space]
 
@@ -37,8 +39,9 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1;
 
-		if (OnLandEvent == null)
+        if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
 		if (OnCrouchEvent == null)
@@ -160,4 +163,17 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "coin")
+        {
+            totalCoins++;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "levelEnd")
+        {
+            levelComplete = true;
+        }
+    }
 }

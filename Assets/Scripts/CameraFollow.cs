@@ -29,8 +29,8 @@ public class CameraFollow : MonoBehaviour
 
         float borderLeft = cameraLeftBorder.transform.position.x + cameraHalfWidth;
         float borderRight = cameraRightBorder.transform.position.x - cameraHalfWidth;
-        float borderTop = cameraLeftBorder.transform.position.x + cameraHalfHeight;
-        float borderBottom = cameraLeftBorder.transform.position.x - cameraHalfHeight;
+        float borderTop = cameraTopBorder.transform.position.y + cameraHalfHeight;
+        float borderBottom = cameraBottomBorder.transform.position.y - cameraHalfHeight;
 
         smoothPos = Vector3.Lerp(this.transform.position,
                 new Vector3(Mathf.Clamp(followTransform.position.x, borderLeft, borderRight),

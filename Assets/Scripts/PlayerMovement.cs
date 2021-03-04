@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -129,9 +130,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "lava" )
         {
-            this.transform.localPosition = startingPos;
-            gameObject.GetComponent<CharacterController2D>().m_Grounded = true;
-            animator.SetBool("IsJumping", false);
+           // this.transform.localPosition = startingPos;
+           // gameObject.GetComponent<CharacterController2D>().m_Grounded = true;
+            //animator.SetBool("IsJumping", false);
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+        if (collision.gameObject.tag == "outOfBounds")
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
         }
     }
     private void OnCollisionStay2D(Collision2D collision)

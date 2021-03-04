@@ -9,6 +9,9 @@ TagManager:
   - transformedPlatform
   - ice
   - cloud
+  - outOfBounds
+  - coin
+  - levelEnd
   layers:
   - Default
   - TransparentFX
