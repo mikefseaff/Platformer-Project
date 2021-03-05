@@ -68,10 +68,12 @@
     <Compile Include="Assets\Scripts\GemStonePickUp.cs" />
     <Compile Include="Assets\Scripts\LavaController.cs" />
     <Compile Include="Assets\Scripts\LevelCompleteController.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerAttackController.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PotionController.cs" />
     <Compile Include="Assets\Scripts\TimeController.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\cloudController.cs" />
     <Compile Include="Assets\Scripts\coinCounterController.cs" />
     <Reference Include="UnityEngine">

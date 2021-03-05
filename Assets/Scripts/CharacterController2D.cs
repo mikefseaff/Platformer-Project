@@ -166,14 +166,19 @@ public class CharacterController2D : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "coin")
-        {
-            totalCoins++;
-            Destroy(collision.gameObject);
-        }
+       
         if (collision.gameObject.tag == "levelEnd")
         {
             levelComplete = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "coin")
+        {
+            Destroy(collision.gameObject);
+            totalCoins++;
+
         }
     }
 }

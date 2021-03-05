@@ -159,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(slide);
             gameObject.GetComponent<CharacterController2D>().isOnIce = true;
         }
+        animator.SetBool("IsJumping", false);
 
     }
 

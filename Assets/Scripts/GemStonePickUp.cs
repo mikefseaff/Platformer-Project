@@ -12,6 +12,8 @@ public class GemStonePickUp : MonoBehaviour
 
             AudioSource.PlayClipAtPoint(pickupClip, transform.position);
             Destroy(this.gameObject);
+         
+           
 
         }
     }
