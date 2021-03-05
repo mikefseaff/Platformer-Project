@@ -172,13 +172,13 @@ public class CharacterController2D : MonoBehaviour
             levelComplete = true;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "coin")
-        {
-            Destroy(collision.gameObject);
-            totalCoins++;
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "coin")
+    //    {
+    //        Destroy(collision.gameObject);
+    //        totalCoins++;
 
-        }
-    }
+    //    }
+    //}
 }

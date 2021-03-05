@@ -7,10 +7,12 @@ public class GemStonePickUp : MonoBehaviour
     public AudioClip pickupClip;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (LayerMask.LayerToName(collision.gameObject.layer) == "Player")
+        if (collision.gameObject.tag == "coinCollider")
         {
 
             AudioSource.PlayClipAtPoint(pickupClip, transform.position);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController2D>().totalCoins++;
+            Debug.Log("hit");
             Destroy(this.gameObject);
          
            

@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\TimeController.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\cloudController.cs" />
+    <Compile Include="Assets\Scripts\coinCollider.cs" />
     <Compile Include="Assets\Scripts\coinCounterController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

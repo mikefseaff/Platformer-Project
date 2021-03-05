@@ -9,10 +9,10 @@ public class LevelCompleteController : MonoBehaviour
     public Text timeText;
     public Text CoinText;
 
-    public GameObject timeController;
-    public GameObject coinController;
+  
     public GameObject endLevelCanvas;
     public GameObject player;
+    public GameObject UI;
     void Start()
     {
         timeText = timeText.GetComponent<Text>();
@@ -41,8 +41,8 @@ public class LevelCompleteController : MonoBehaviour
         if (player.GetComponent<CharacterController2D>().levelComplete)
         {
             Time.timeScale = 0;
-            timeText.text = "Your Time was " + timeController.GetComponent<TimeController>().time + " seconds ";
-            CoinText.text = "You Collected " + coinController.GetComponent<coinCounterController>().coins + "/9 Coins";
+            timeText.text = "Your Time was " + UI.GetComponent<UIManager>().time + " seconds ";
+            CoinText.text = "You Collected " + UI.GetComponent<UIManager>().coins + "/9 Coins";
             endLevelCanvas.SetActive(true);
 
 

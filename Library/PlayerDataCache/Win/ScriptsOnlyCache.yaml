@@ -11,9 +11,9 @@ ScriptsOnlyBuild:
     - PlayerAttackController
     - PlayerMovement
     - PotionController
-    - TimeController
+    - UIManager
     - cloudController
-    - coinCounterController
+    - coinCollider
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridBrushEditor
@@ -67,6 +67,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -94,33 +96,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11378}
     - Class: 114
-      Script: {instanceID: 11422}
-    - Class: 114
       Script: {instanceID: 11784}
     - Class: 114
       Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 12060}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12130}
+      Script: {instanceID: 12062}
     - Class: 114
-      Script: {instanceID: 12204}
+      Script: {instanceID: 12132}
     - Class: 114
-      Script: {instanceID: 12306}
+      Script: {instanceID: 12206}
     - Class: 114
-      Script: {instanceID: 12324}
+      Script: {instanceID: 12326}
     - Class: 114
-      Script: {instanceID: 12720}
+      Script: {instanceID: 12722}
     - Class: 114
-      Script: {instanceID: 12834}
+      Script: {instanceID: 12836}
     - Class: 114
-      Script: {instanceID: 13040}
+      Script: {instanceID: 13042}
     - Class: 114
-      Script: {instanceID: 13100}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13108}
+      Script: {instanceID: 13110}
+    - Class: 114
+      Script: {instanceID: 31216}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -168,6 +170,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
+    - Class: 70
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -195,35 +199,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11378}
     - Class: 114
-      Script: {instanceID: 11422}
-    - Class: 114
       Script: {instanceID: 11784}
     - Class: 114
       Script: {instanceID: 11914}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 12060}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 12130}
+      Script: {instanceID: 12062}
     - Class: 114
-      Script: {instanceID: 12204}
+      Script: {instanceID: 12132}
     - Class: 114
-      Script: {instanceID: 12306}
+      Script: {instanceID: 12206}
     - Class: 114
-      Script: {instanceID: 12324}
+      Script: {instanceID: 12326}
     - Class: 114
-      Script: {instanceID: 12618}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 12720}
+      Script: {instanceID: 12722}
     - Class: 114
-      Script: {instanceID: 12834}
+      Script: {instanceID: 12836}
     - Class: 114
-      Script: {instanceID: 13040}
+      Script: {instanceID: 13042}
     - Class: 114
-      Script: {instanceID: 13100}
+      Script: {instanceID: 13102}
     - Class: 114
-      Script: {instanceID: 13108}
+      Script: {instanceID: 13110}
+    - Class: 114
+      Script: {instanceID: 31216}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -469,7 +473,13 @@ ScriptsOnlyBuild:
     className: CameraFollow
   - hash:
       serializedVersion: 2
-      Hash: 3f62de64247e0e2dd8be75dee39f14b2
+      Hash: a10cbbf19e33d6e488f87769dd44b824
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIManager
+  - hash:
+      serializedVersion: 2
+      Hash: c00ced2e18ca14caa22c3984d908ef6c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelCompleteController
@@ -755,6 +765,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: coinCollider
   platform: 5
   scenePathNames:
   - Assets/Scenes/Level1.unity

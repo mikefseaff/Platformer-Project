@@ -12,6 +12,7 @@ TagManager:
   - outOfBounds
   - coin
   - levelEnd
+  - coinCollider
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - PlayerAttack
   - Lava
   - cloud
-  - 
+  - CoinCollecter
   - 
   - 
   - 
